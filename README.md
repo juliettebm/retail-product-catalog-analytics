@@ -5,11 +5,11 @@
 [![pandas](https://img.shields.io/badge/pandas-Data%20Wrangling-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
 
-Un catalogue produit audité et un backlog priorisé par impact business, construits comme le ferait un Proxy Product Owner en charge d'un catalogue e-commerce, sur le même jeu de données que `customer-analytics-retail` mais avec un angle différent : produit, pas client.
+Audit du catalogue produit d'un e-commerçant britannique (1 067 371 lignes de transaction, jeu de données Online Retail II) : détection des anomalies de fiche produit, chiffrage de leur impact réel sur le chiffre d'affaires, et priorisation des corrections en conséquence. Même jeu de données que `customer-analytics-retail`, mais un angle différent : le produit et son catalogue, pas le client.
 
 ## Objectif
 
-Qualifier les anomalies d'un catalogue produit (libellés incohérents, codes non-produits, descriptions manquantes) et les prioriser par impact business réel plutôt qu'au hasard, avec un proxy de conversion (taux d'annulation) là où aucune donnée de navigation n'existe.
+46 % du chiffre d'affaires catalogue s'avère exposé à des libellés produit incohérents, dont sept des dix meilleures ventes. Ce projet part de ce genre de constat pour qualifier les anomalies (libellés incohérents, codes non-produits mélangés au catalogue, descriptions manquantes), les chiffrer en euros plutôt qu'en nombre de lignes, et prioriser les corrections par impact business réel plutôt qu'au hasard. Faute de données de navigation, le taux d'annulation sert de proxy de conversion.
 
 ## Structure du projet
 
