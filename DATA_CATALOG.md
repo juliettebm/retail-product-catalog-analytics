@@ -1,6 +1,6 @@
 # Catalogue de données : Product Catalog & Transactions (Online Retail II)
 
-Contrairement au projet `customer-analytics-retail` (centré client : segmentation, churn), ce catalogue est centré **produit** : c'est le référentiel qu'un Product Owner en charge d'un catalogue de données regarderait avant de lancer un chantier de nettoyage ou un dashboard de suivi catalogue.
+À lire avant de lancer un chantier de nettoyage ou un dashboard de suivi catalogue. Centré sur le **produit** (`StockCode`, `Description`), pas sur le client : pour le référentiel client, voir `customer-analytics-retail`.
 
 ## 1. Domaines métier
 
@@ -43,4 +43,4 @@ Contrairement au projet `customer-analytics-retail` (centré client : segmentati
 
 ## 5. Utilisation
 
-Ce catalogue encadre le notebook `notebooks/01_catalog_quality_conversion.ipynb` et le backlog `BACKLOG.md`. Il est volontairement scindé du catalogue "client" du projet `customer-analytics-retail`, un vrai référentiel Master Data sépare ses domaines plutôt que de tout documenter dans un seul fichier fourre-tout.
+Référence pour le notebook `notebooks/01_catalog_quality_conversion.ipynb` et pour `BACKLOG.md`. Scindé du catalogue "client" du projet `customer-analytics-retail` : chaque domaine a son propre référentiel plutôt qu'un fichier unique fourre-tout.
