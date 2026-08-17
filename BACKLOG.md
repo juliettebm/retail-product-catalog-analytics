@@ -12,7 +12,7 @@ Le catalogue produit contient des anomalies connues (codes non-produits mélang�
 
 | # | User story | Critères d'acceptation | Priorité |
 |---|---|---|---|
-| 1.1 | En tant que Data Product Owner, je veux un catalogue de produits documenté et audité afin que les équipes commerciales ne travaillent pas sur des fiches produit dupliquées ou incohérentes | Chaque anomalie de `DATA_CATALOG.md` (Q1-Q5) est quantifiée en nombre de lignes concernées | Must |
+| 1.1 | En tant que Data Product Owner, je veux un catalogue de produits documenté et audité afin que les équipes commerciales ne travaillent pas sur des fiches produit dupliquées ou incohérentes | Chaque anomalie de `DATA_CATALOG.md` est quantifiée en nombre de lignes concernées, catalogue mis à jour dès qu'une nouvelle anomalie est trouvée | Must |
 | 1.2 | En tant que Data Product Owner, je veux isoler les codes non-produits (frais, ajustements, tests) du catalogue produit afin que les KPIs de performance produit ne soient pas pollués | Une liste explicite des codes exclus est documentée, pas un filtre implicite dans le code | Must |
 
 ### Epic 2 : Prioriser les corrections par impact business et conversion

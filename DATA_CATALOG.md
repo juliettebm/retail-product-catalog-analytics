@@ -17,7 +17,7 @@
 |---|---|---|---|
 | `Invoice` | str, 6 chiffres, préfixe `C` si annulation | Identifiant de facture/commande | 19 494 lignes (1,8 %) sont des annulations (préfixe `C`) |
 | `StockCode` | str | Identifiant produit, clé du catalogue | 5 305 codes uniques, mais 62 ne suivent pas le format standard 5 chiffres (voir Q1) |
-| `Description` | str | Libellé produit | 4 382 lignes (0,4 %) sans description ; 1 232 codes produit ont plusieurs libellés différents (voir Q2) |
+| `Description` | str | Libellé produit | 4 382 lignes (0,4 %) sans description ; 1 230 codes produit ont plusieurs libellés différents (voir Q2) |
 | `Quantity` | int | Quantité vendue (négative si annulation) | 3 455 lignes à quantité négative sans être des annulations (voir Q6) |
 | `InvoiceDate` | datetime | Date/heure de la transaction | Décembre 2009 à décembre 2011 |
 | `Price` | float (GBP) | Prix unitaire | 6 207 lignes à prix ≤ 0 (voir Q3) |
@@ -34,8 +34,8 @@
 
 | Règle | Constat | Action recommandée |
 |---|---|---|
-| **Q1 : codes non-produits mélangés au catalogue** | 62 `StockCode` sur 5 305 ne suivent pas le format standard (ex. `POST`, `BANK CHARGES`, `ADJUST`, `AMAZONFEE`, `DOT`, `M`, `C2`, `TEST001`, `TEST002`) | À isoler du catalogue produit avant tout calcul de performance produit, ce sont des frais/ajustements, pas des articles |
-| **Q2 : incohérence de libellé** | 1 232 codes produit (23 % du catalogue) ont plusieurs descriptions différentes selon les lignes (fautes de frappe, variantes, mises à jour non rétroactives) | Nécessite une règle de dédoublonnage (ex. description la plus fréquente par code), documentée ici pour que le choix soit traçable, pas caché dans le code |
+| **Q1 : codes non-produits mélangés au catalogue** | 62 `StockCode` sur 5 305 ne suivent pas le format standard 5 chiffres. Après vérification individuelle du libellé de chacun, seuls 17 sont réellement des frais/ajustements/tests (`POST`, `BANK CHARGES`, `ADJUST`, `AMAZONFEE`, `DOT`, `M`, `C2`, `TEST001`, `TEST002`, etc.), les 45 autres (`PADS`, `SP1002`, `DCGS*`, `gift_0001_*`) sont de vrais produits malgré leur code non-standard | Seuls les 17 codes confirmés sont isolés du catalogue produit ; les 45 autres sont conservés, un filtre sur le seul format aurait exclu à tort de vrais articles |
+| **Q2 : incohérence de libellé** | 1 230 codes produit (23 % du catalogue) ont plusieurs descriptions différentes selon les lignes (fautes de frappe, variantes, mises à jour non rétroactives) | Nécessite une règle de dédoublonnage (ex. description la plus fréquente par code), documentée ici pour que le choix soit traçable, pas caché dans le code |
 | **Q3 : prix incohérents** | 6 207 lignes à prix ≤ 0 | À ne pas supprimer aveuglément : certains sont des annulations légitimes, d'autres des erreurs de saisie, distingués dans le notebook |
 | **Q4 : description manquante** | 4 382 lignes (0,4 %) sans libellé produit | Le `StockCode` reste exploitable, mais le produit est invisible dans toute restitution basée sur le libellé |
 | **Q5 : identifiant client absent** | 22,8 % des lignes n'ont pas de `Customer ID` (achats invités) | Hors périmètre de toute analyse au niveau client, mais valide pour l'analyse au niveau produit menée ici |
