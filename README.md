@@ -1,4 +1,9 @@
-# Retail Product Catalog Analytics
+# 🏷️ Retail Product Catalog Analytics
+
+[![Dataset](https://img.shields.io/badge/Dataset-Online%20Retail%20II%20(UCI)-blue?logo=databricks&logoColor=white)](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
+[![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![pandas](https://img.shields.io/badge/pandas-Data%20Wrangling-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
 
 Un catalogue produit audité et un backlog priorisé par impact business, construits comme le ferait un Proxy Product Owner en charge d'un catalogue e-commerce, sur le même jeu de données que `customer-analytics-retail` mais avec un angle différent : produit, pas client.
 
