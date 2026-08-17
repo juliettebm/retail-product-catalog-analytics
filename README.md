@@ -11,6 +11,15 @@ On me confie le catalogue produit d'un e-commerçant britannique (1 067 371 lign
 
 46 % du chiffre d'affaires catalogue s'avère exposé à des libellés produit incohérents, dont sept des dix meilleures ventes. Je pars de ce type de constat pour qualifier les anomalies (libellés incohérents, codes non-produits mélangés au catalogue, descriptions manquantes), les chiffrer en livres plutôt qu'en nombre de lignes, et prioriser les corrections par impact business réel plutôt qu'au hasard. Faute de données de navigation, le taux d'annulation sert de proxy de conversion.
 
+## Questions traitées
+
+- Combien de codes du catalogue ne sont en réalité pas des produits (frais, ajustements, tests) et combien de lignes ça représente ?
+- Quels codes produit ont un libellé incohérent ou une description manquante, et lesquels sont de vrais trous de catalogue plutôt que des lignes récupérables ?
+- Combien ces anomalies coûtent-elles réellement, en chiffre d'affaires, pas en nombre de lignes ?
+- Les produits les plus vendus sont-ils concernés, ce qui justifierait de les corriger en priorité ?
+- Quels produits ont le taux d'annulation le plus élevé, en l'absence de données de navigation pour mesurer la conversion directement ?
+- *(analyse univariée/bivariée)* Le chiffre d'affaires est-il davantage porté par le volume ou par le prix ? Le catalogue contient-il des anomalies que l'audit qualité initial n'a pas couvertes ?
+
 ## Structure du projet
 
 ```
