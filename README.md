@@ -48,12 +48,13 @@ jupyter notebook notebooks/01_catalog_quality_conversion.ipynb
 
 ## Contenu du notebook
 
-1. **Contexte et objectif**
-2. **Audit qualité du catalogue** : 17 codes non-produits confirmés un par un via leur libellé (pas devinés sur un simple format), 1 230 codes à libellé incohérent, distinction entre codes jamais décrits (353, orphelins réels) et codes partiellement manquants mais récupérables (2 092).
-3. **Impact business des anomalies** : chiffre d'affaires exposé par anomalie, pas juste un nombre de lignes.
-4. **Produits les plus vendus croisés avec le statut qualité**, pour prioriser la correction là où l'impact est le plus fort.
-5. **Taux d'annulation par produit**, utilisé comme proxy de conversion en l'absence de données de navigation.
-6. **Synthèse** : ce qui a été livré, et les limites explicites.
+1. **Mission et contexte**, avec un premier aperçu réel des données (`head()`, `dtypes`, `describe()`) avant tout calcul.
+2. **Indicateurs retenus** : les quatre angles choisis et pourquoi, avant d'écrire la moindre ligne de calcul.
+3. **Audit qualité du catalogue** : 17 codes non-produits confirmés un par un via leur libellé (pas devinés sur un simple format), 1 230 codes à libellé incohérent, distinction entre codes jamais décrits (353, orphelins réels) et codes partiellement manquants mais récupérables (2 092).
+4. **Impact business des anomalies** : chiffre d'affaires exposé par anomalie, pas juste un nombre de lignes.
+5. **Produits les plus vendus croisés avec le statut qualité**, pour prioriser la correction là où l'impact est le plus fort.
+6. **Taux d'annulation par produit**, utilisé comme proxy de conversion en l'absence de données de navigation.
+7. **Synthèse** : ce qui a été livré, et les limites explicites.
 
 ## Principaux résultats (obtenus en exécutant le notebook)
 
