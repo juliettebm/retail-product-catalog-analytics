@@ -18,11 +18,11 @@ Contrairement au projet `customer-analytics-retail` (centré client : segmentati
 | `Invoice` | str, 6 chiffres, préfixe `C` si annulation | Identifiant de facture/commande | 19 494 lignes (1,8 %) sont des annulations (préfixe `C`) |
 | `StockCode` | str | Identifiant produit, clé du catalogue | 5 305 codes uniques, mais 62 ne suivent pas le format standard 5 chiffres (voir Q1) |
 | `Description` | str | Libellé produit | 4 382 lignes (0,4 %) sans description ; 1 232 codes produit ont plusieurs libellés différents (voir Q2) |
-| `Quantity` | int | Quantité vendue (négative si annulation) | — |
+| `Quantity` | int | Quantité vendue (négative si annulation) | RAS |
 | `InvoiceDate` | datetime | Date/heure de la transaction | Décembre 2009 à décembre 2011 |
 | `Price` | float (GBP) | Prix unitaire | 6 207 lignes à prix ≤ 0 (voir Q3) |
 | `Customer ID` | float (identifiant) | Identifiant client | 243 007 lignes (22,8 %) sans identifiant client (achats invités, hors périmètre des KPIs par client) |
-| `Country` | str | Pays de livraison | — |
+| `Country` | str | Pays de livraison | RAS |
 
 ## 3. Glossaire métier
 
