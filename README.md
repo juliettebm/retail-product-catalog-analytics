@@ -51,10 +51,11 @@ jupyter notebook notebooks/01_catalog_quality_conversion.ipynb
 1. **Mission et contexte**, avec un premier aperçu réel des données (`head()`, `dtypes`, `describe()`) avant tout calcul.
 2. **Indicateurs retenus** : les quatre angles choisis et pourquoi, avant d'écrire la moindre ligne de calcul.
 3. **Audit qualité du catalogue** : 17 codes non-produits confirmés un par un via leur libellé (pas devinés sur un simple format), 1 230 codes à libellé incohérent, distinction entre codes jamais décrits (353, orphelins réels) et codes partiellement manquants mais récupérables (2 092).
-4. **Impact business des anomalies** : chiffre d'affaires exposé par anomalie, pas juste un nombre de lignes.
-5. **Produits les plus vendus croisés avec le statut qualité**, pour prioriser la correction là où l'impact est le plus fort.
-6. **Taux d'annulation par produit**, utilisé comme proxy de conversion en l'absence de données de navigation.
-7. **Synthèse** : ce qui a été livré, et les limites explicites.
+4. **Analyse univariée et bivariée** : distributions (Price, Quantity, pays), corrélations entre Quantity/Price/revenue. Fait remonter 3 455 lignes d'ajustement de stock (quantité négative, prix nul) non couvertes par l'audit qualité.
+5. **Impact business des anomalies** : chiffre d'affaires exposé par anomalie, pas juste un nombre de lignes.
+6. **Produits les plus vendus croisés avec le statut qualité**, pour prioriser la correction là où l'impact est le plus fort.
+7. **Taux d'annulation par produit**, utilisé comme proxy de conversion en l'absence de données de navigation.
+8. **Synthèse** : ce qui a été livré, et les limites explicites.
 
 ## Principaux résultats (obtenus en exécutant le notebook)
 
@@ -62,6 +63,8 @@ jupyter notebook notebooks/01_catalog_quality_conversion.ipynb
 - **46,1 % du chiffre d'affaires catalogue** (£20,1M au total) est exposé à un libellé incohérent, dont **7 des 10 produits les plus vendus**. C'est l'argument concret pour prioriser leur correction en premier.
 - Les 353 codes jamais décrits représentent **£0 de chiffre d'affaires mesurable**, un résultat négatif gardé tel quel : ce sont probablement des lignes de test ou d'ajustement résiduel, pas une perte commerciale réelle.
 - Le taux d'annulation le plus élevé se concentre sur une même famille de produits (variantes du même article), pas sur des incidents isolés, ce qui change la nature de la correction à prioriser (fiche produit ou process, pas un SKU au hasard).
+- Analyse bivariée : `Quantity` et `Price` sont quasiment indépendants (corrélation -0,02), le chiffre d'affaires suit surtout le volume vendu (corrélation 0,78 avec `Quantity`), pas le prix unitaire.
+- Analyse univariée : 3 455 lignes ont une quantité négative sans être des annulations (pas de préfixe `C`), toutes à prix nul, des écritures d'ajustement de stock (*lost*, *damages*, *short*) non couvertes par l'audit qualité initial.
 
 ## Stack
 
